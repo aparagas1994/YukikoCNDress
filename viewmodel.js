@@ -68,6 +68,134 @@ const ViewModel = {
   sections: [
 
     // ══════════════════════════════════════════════════════
+    //  QUICK SUMMARY  (full width — read this first)
+    // ══════════════════════════════════════════════════════
+    {
+      id:        "quicksummary",
+      title:     "⚡ Quick Summary — Everything at a Glance",
+      images:    ["zzz_silhouette", "ai_gen_red", "ai_gen_purple", "ornate_sleeves", "honoka"],
+      fullWidth: true,
+      style:     "background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 3px solid #0f3460; color: white;",
+      content:   `
+        <details style="cursor:pointer;">
+          <summary style="
+            color: #a0b4d0;
+            font-size: 0.93em;
+            padding: 4px 0 12px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+          ">
+            <span style="
+              background: rgba(255,255,255,0.12);
+              border-radius: 20px;
+              padding: 3px 14px;
+              font-size: 0.88em;
+              font-weight: 600;
+              letter-spacing: 0.03em;
+            ">▶ Click to expand full summary</span>
+            <span style="font-size:0.82em; opacity:0.6;">Full details in numbered sections below</span>
+          </summary>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px;">
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">🧥 THE DRESS</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>Tight pencil column — ankle-length preferred, shorter fine</li>
+                <li>Fabric clings head to toe, zero volume, zero flare</li>
+                <li>Satin or silk finish, embroidered accents (cloud/dragon)</li>
+                <li>All fabric edges have decorative piping trim</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">💎 CHEST KEYHOLE</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>Diamond or pointed-arch shaped opening, center chest</li>
+                <li>Exposes mid-chest and top of underboob</li>
+                <li>Hard clean edges, trim-bordered all around</li>
+                <li>Looks designed — not like missing fabric</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">📐 SLITS & SIDES</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>Two high slits — both sides, up to hip level</li>
+                <li>Only leg reveal — the dress stays long everywhere else</li>
+                <li>Decorative rope/cord straps running down the bodice sides</li>
+                <li>Slit edges finished with trim piping</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">🦾 SLEEVES</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>Detached — tight fit, upper arm to wrist</li>
+                <li>Ornate embroidered surface matching the leggings</li>
+                <li>Geometric/diamond hole at the very top near the shoulder</li>
+                <li>Bordered and intentional, not a raw gap</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">🦵 LEGGINGS</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>Optional — see section 4 for both paths</li>
+                <li>If used: ornate, above-knee, matches sleeve design</li>
+                <li>If skipped: bare legs through slits, cleaner look</li>
+                <li>Bare thigh gap through slit is intentional either way</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">🎀 COLLAR & TRIM</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>High mandarin collar — stiff and standing</li>
+                <li>3–5 Chinese frog knot closures below collar to keyhole</li>
+                <li>Top collar detail: Chinese knot, tassel, or cord — not a Western bow</li>
+                <li>1–2 tassels hanging at hip</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">💇 HAIR</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>Likely ponytail — consistent with her usual look</li>
+                <li>Hair ornament/bowtie to match the Chinese outfit theme</li>
+                <li>No strong refs — artist's creative call here</li>
+                <li>See section 10 for loose direction</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">🔙 BACK</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
+                <li>Must be exposed — full open, cross-strap, or keyhole cutout</li>
+                <li>Optional: split decorative fabric tail panels from the waist</li>
+                <li>Back flaps are your call — may fight the qipao read</li>
+              </ul>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px; grid-column: 1 / -1;">
+              <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">📌 KEY REMINDERS</p>
+              <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px; columns:2; column-gap:24px;">
+                <li>ZZZ ref (#1) is silhouette + keyhole shape only — don't copy the character</li>
+                <li>Main battle outfit should be more revealing than this dress</li>
+                <li>Embroidery: accents only, not full coverage — the silhouette does the work</li>
+                <li>Sleeve and legging design must match each other</li>
+              </ul>
+            </div>
+
+          </div>
+        </details>
+      `
+    },
+
+    // ══════════════════════════════════════════════════════
     //  OVERVIEW
     // ══════════════════════════════════════════════════════
     {
@@ -83,9 +211,10 @@ const ViewModel = {
            and decorative embroidery throughout.</p>
 
         <div class="warning-box" style="margin-top:14px; border-left-color: #9b59b6; background: #f9f0ff;">
-          <p style="color:#6c3483; margin:0 0 8px 0;"><strong>📝 Note to Artist — Main Outfit vs China Outfit</strong></p>
+          <p style="color:#6c3483; margin:0 0 8px 0;"><strong>📝 On topic of lewdness - Main Outfit vs China Outfit</strong></p>
           <p style="color:#6c3483; margin:0;">
-            This character has multiple outfits. The intention is that the <strong>main/default outfit
+          <strong>tl;dr</strong> Make sure the main battle kimono is more lewd then this.<br>
+            The intention is that the <strong>main/default outfit
             should remain more revealing than this China outfit</strong>. Keep that hierarchy in mind
             when making decisions about exposure level — the China dress should feel elegant and
             battle-ready, but not her most revealing look overall.
@@ -117,7 +246,8 @@ const ViewModel = {
           ☐ High mandarin collar + frog closures (see section 7)<br>
           ☐ Tassels at hip, decorative piping along all edges<br>
           ☐ Back exposed — full open, cross-strap, or keyhole (your call)<br>
-          ☐ Back split flap panels — long decorative fabric tails from the back waist (see section 9)
+          ☐ Back split flap panels — optional, see section 9<br>
+          ☐ Hair — likely ponytail, Chinese-themed ornament/bowtie, see section 10
         </p>
       `
     },
@@ -435,21 +565,24 @@ const ViewModel = {
       images:  ["open_back", "crossstrap_back", "back_column", "honoka"],
       content: `
         <div class="tldr-box">
-          <strong>TL;DR:</strong> Back must be exposed. Also add split decorative fabric tail panels
-          hanging from the back waist — like the trailing flaps common on Genshin Impact characters.
-          Long, flowing, split in the middle. They add movement and visual drama from behind.
+          <strong>TL;DR:</strong> Back must be exposed — your pick of full open, cross-strap, or keyhole.
+          Optionally, add split decorative fabric tail panels hanging from the back waist for visual drama.
+          They look great but may clash with the Chinese aesthetic — entirely your judgement call.
         </div>
 
         <p><strong>Direction:</strong> The back must be <strong>exposed</strong>.
            How it's exposed is entirely your call — all three options below are valid.</p>
 
-        <p><strong>Required: Split Back Flap Panels</strong><br>
-           Regardless of which back exposure option you choose, add two long decorative fabric panels
-           hanging from the back waist — split down the middle, flowing down behind her.
-           Think the trailing fabric tails common on Genshin Impact character designs.
-           They should be embroidered or patterned to match the dress fabric,
-           and move/flow dramatically with her body.
-           <span class="ref-tag">#15 Honoka</span></p>
+        <div class="options">
+          <h3>Optional — Split Back Flap Panels</h3>
+          <p>Two long decorative fabric panels hanging from the back waist, split down the middle,
+             flowing behind her. Think the trailing fabric tails common on Genshin Impact character designs.
+             They add movement and visual drama from behind, and would be embroidered to match the dress fabric.</p>
+          <p>This is genuinely optional — they can look stunning but may pull the design away from
+             a clean Chinese qipao read. If it works with your composition, great. If it doesn't, skip it.
+             Trust your eye on this one.
+             <span class="ref-tag">#15 Honoka</span></p>
+        </div>
 
         <div class="options">
           <h3>Option A — Full Open Back</h3>
@@ -470,6 +603,55 @@ const ViewModel = {
              Work from the front keyhole shape as your guide.</p>
         </div>
         <p style="margin-top:10px;"><span class="ref-tag">#12 Back Silhouette</span> — Full body back view for silhouette proportion, regardless of which option you choose.</p>
+      `
+    },
+
+    // ══════════════════════════════════════════════════════
+    //  10. HAIR & PONYTAIL BOWTIE
+    // ══════════════════════════════════════════════════════
+    {
+      id:      "hair",
+      title:   "10 — Hair & Ponytail Bowtie",
+      images:  ["ai_gen_purple", "ornate_sleeves"],
+      content: `
+        <div class="tldr-box">
+          <strong>TL;DR:</strong> She likely keeps her ponytail for this outfit. The hair ornament/bowtie
+          should feel Chinese rather than plain — but references here are limited so this is
+          largely your creative space. Go with what feels right for the outfit.
+        </div>
+
+        <p><strong>Hair:</strong> The assumption is she keeps her ponytail for this look —
+           it's consistent with her character and works well with a qipao silhouette.
+           If you feel a different updo suits the design better, that's fine too.</p>
+
+        <p><strong>Hair Ornament / Bowtie:</strong> There should be some form of decorative hair
+           piece that ties into the Chinese outfit theme — a hair ornament, ribbon, knot, or bowtie
+           style piece near the ponytail base or on the side.</p>
+
+        <div class="options">
+          <h3>Loose Direction — Mix and Match</h3>
+          <p>Looking at <span class="ref-tag">#7 AI Purple</span>, the hair accessory there has a nice
+             structured feel with the ribbon/bow at the ponytail — something in that territory could work.
+             <span class="ref-tag">#10 Ornate Sleeves</span> shows the character with a hair ornament
+             that has a more elaborate, Chinese-accessory feel with hanging elements.
+             A combination of both — a structured bow shape with some hanging ornament detail — could
+             be a strong direction.</p>
+        </div>
+
+        <div class="warning-box">
+          <p style="color:#856404; margin:0;">
+            <strong>Note:</strong> References for this specific element are limited — this brief doesn't
+            have strong dedicated hair refs to point to. This is genuinely your creative space.
+            The only loose asks are: keep it feeling Chinese rather than generic, and make sure it
+            complements rather than competes with the outfit. Otherwise, go with your instinct.
+          </p>
+        </div>
+
+        <h3>Loose Refs (direction only, not prescriptive):</h3>
+        <ul>
+          <li><span class="ref-tag">#7 AI Purple</span> — Hair bow/ribbon structure at the ponytail base as a starting point.</li>
+          <li><span class="ref-tag">#10 Ornate Sleeves</span> — More elaborate hair ornament with Chinese accessory language and hanging elements.</li>
+        </ul>
       `
     },
 
