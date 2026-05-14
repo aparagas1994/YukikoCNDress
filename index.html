@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinese Hanfu Reference</title>
+
+  <!--
+    ABSTRACTION in action:
+    This file is just a shell. The concerns are separated:
+      styles.css   → how everything looks
+      viewmodel.js → what the data IS  (edit this!)
+      app.js       → how everything behaves
+  -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Left panel: spec sections (built by JS from viewmodel) -->
+    <div class="specs-side">
+      <h1 id="title"></h1>
+      <p class="subtitle" id="subtitle"></p>
+      <div class="sections-container" id="sectionsContainer"></div>
+    </div>
+
+    <!-- Right panel: image grid (built by JS from viewmodel) -->
+    <div class="images-side" id="imagesSide">
+      <button class="close-btn" id="closeBtn">✕ Show All Images</button>
+      <div class="images-grid" id="imagesGrid"></div>
+    </div>
+
+  </div>
+
+  <!-- Lightbox modal -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Full size preview">
+  </div>
+
+  <!-- Load data first, then the classes, then boot the app -->
+  <script src="viewmodel.js"></script>
+  <script src="app.js"></script>
+  <script>
+    /**
+     * Entry point.
+     *
+     * OutfitViewer reads the ViewModel and builds all the
+     * ImageCard and OutfitSection objects internally.
+     * Then init() mounts them to the DOM.
+     *
+     * To change content: edit viewmodel.js only.
+     * To change look:    edit styles.css only.
+     * To change behaviour: edit app.js only.
+     */
+    const viewer = new OutfitViewer(ViewModel);
+
+    viewer.init({
+      viewModel:         ViewModel,
+      titleEl:           document.getElementById("title"),
+      subtitleEl:        document.getElementById("subtitle"),
+      sectionsContainer: document.getElementById("sectionsContainer"),
+      imagesGrid:        document.getElementById("imagesGrid"),
+      closeBtn:          document.getElementById("closeBtn"),
+      specsSide:         document.querySelector(".specs-side"),
+      imagesSide:        document.getElementById("imagesSide"),
+      modal:             document.getElementById("imageModal"),
+      modalImg:          document.getElementById("modalImage"),
+      modalClose:        document.getElementById("modalClose"),
+    });
+  </script>
+
+</body>
+</html>
