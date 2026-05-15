@@ -9,10 +9,6 @@
  *  → rename to:  zzz_chest_detail.png
  *
  * ── IMAGE NUMBERS ─────────────────────────────────────────────
- *  Each image has a num field. That number appears as a badge
- *  on the card in the right panel. Refs in the text below use
- *  #N format so the artist can immediately find the right image.
- *
  *   #1  ZZZ Silhouette       #8  AI Long Hem
  *   #2  ZZZ Chest            #9  Ornate Leggings
  *   #3  Column Back          #10 Ornate Sleeves
@@ -25,8 +21,8 @@
 
 const ViewModel = {
 
-  title:    "Chinese Qipao — Artist Reference Brief",
-  subtitle: "Hover section → highlights images · Hover image → highlights sections · Click image → preview + info · Click again → fullscreen · ESC → reset",
+  title:    "Yukiko Qipao",
+  subtitle: "China Expansion",
 
   images: [
 
@@ -68,35 +64,23 @@ const ViewModel = {
   sections: [
 
     // ══════════════════════════════════════════════════════
-    //  QUICK SUMMARY  (full width — read this first)
+    //  QUICK SUMMARY  (collapsed by default)
     // ══════════════════════════════════════════════════════
     {
       id:        "quicksummary",
       title:     "⚡ Quick Summary — Everything at a Glance",
-      images:    ["zzz_silhouette", "ai_gen_red", "ai_gen_purple", "ornate_sleeves", "honoka"],
+      images:    [],
       fullWidth: true,
-      style:     "background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 3px solid #0f3460; color: white;",
+      style:     "background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 3px solid #0f3460; color: white; cursor: default;",
       content:   `
         <details style="cursor:pointer;">
-          <summary style="
-            color: #a0b4d0;
-            font-size: 0.93em;
-            padding: 4px 0 12px;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            user-select: none;
-          ">
-            <span style="
-              background: rgba(255,255,255,0.12);
-              border-radius: 20px;
-              padding: 3px 14px;
-              font-size: 0.88em;
-              font-weight: 600;
-              letter-spacing: 0.03em;
-            ">▶ Click to expand full summary</span>
-            <span style="font-size:0.82em; opacity:0.6;">Full details in numbered sections below</span>
+          <summary style="color:#a0b4d0; font-size:0.93em; padding:4px 0 12px; list-style:none;
+                          display:flex; align-items:center; gap:8px; user-select:none;">
+            <span style="background:rgba(255,255,255,0.12); border-radius:20px; padding:3px 14px;
+                         font-size:0.88em; font-weight:600; letter-spacing:0.03em;">
+              ▶ Click to expand full summary
+            </span>
+            <span style="font-size:0.82em; opacity:0.6;">Numbered sections below have the refs and details</span>
           </summary>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px;">
@@ -147,7 +131,6 @@ const ViewModel = {
                 <li>Optional — see section 4 for both paths</li>
                 <li>If used: ornate, above-knee, matches sleeve design</li>
                 <li>If skipped: bare legs through slits, cleaner look</li>
-                <li>Bare thigh gap through slit is intentional either way</li>
               </ul>
             </div>
 
@@ -156,7 +139,7 @@ const ViewModel = {
               <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
                 <li>High mandarin collar — stiff and standing</li>
                 <li>3–5 Chinese frog knot closures below collar to keyhole</li>
-                <li>Top collar detail: Chinese knot, tassel, or cord — not a Western bow</li>
+                <li>Top collar detail: Chinese knot or cord — not a Western bow</li>
                 <li>1–2 tassels hanging at hip</li>
               </ul>
             </div>
@@ -166,89 +149,50 @@ const ViewModel = {
               <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
                 <li>Likely ponytail — consistent with her usual look</li>
                 <li>Hair ornament/bowtie to match the Chinese outfit theme</li>
-                <li>No strong refs — artist's creative call here</li>
-                <li>See section 10 for loose direction</li>
+                <li>Limited refs — your creative space, see section 10</li>
               </ul>
             </div>
 
             <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px;">
               <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">🔙 BACK</p>
               <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px;">
-                <li>Must be exposed — full open, cross-strap, or keyhole cutout</li>
-                <li>Optional: split decorative fabric tail panels from the waist</li>
-                <li>Back flaps are your call — may fight the qipao read</li>
+                <li>Must be exposed — full open, cross-strap, or keyhole</li>
+                <li>Optional: split fabric tail panels from the waist</li>
+                <li>Back flaps your call — may fight the qipao read</li>
               </ul>
             </div>
 
-            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px; grid-column: 1 / -1;">
+            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px; grid-column:1 / -1;">
               <p style="color:#e0c97f; font-weight:700; margin-bottom:8px; font-size:0.9em;">📌 KEY REMINDERS</p>
               <ul style="color:#d0dde8; font-size:0.88em; line-height:1.9; margin-left:14px; columns:2; column-gap:24px;">
-                <li>ZZZ ref (#1) is silhouette + keyhole shape only — don't copy the character</li>
+                <li>ZZZ ref (#1) — silhouette + keyhole shape only, don't copy the character</li>
                 <li>Main battle outfit should be more revealing than this dress</li>
-                <li>Embroidery: accents only, not full coverage — the silhouette does the work</li>
+                <li>Embroidery: accents only, not full coverage</li>
                 <li>Sleeve and legging design must match each other</li>
               </ul>
             </div>
 
           </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;">
+            <div style="background:rgba(155,89,182,0.2); border-left:4px solid #9b59b6; border-radius:6px; padding:12px;">
+              <p style="color:#d7bde2; font-weight:700; margin-bottom:6px; font-size:0.85em;">📝 LEWDNESS NOTE</p>
+              <p style="color:#d7bde2; font-size:0.85em; line-height:1.7; margin:0;">
+                The main/default battle outfit should remain <strong style="color:white;">more revealing</strong> than this China dress.
+                Keep that hierarchy in mind — this outfit is elegant and capable, not her most exposed look.
+              </p>
+            </div>
+            <div style="background:rgba(255,193,7,0.15); border-left:4px solid #ffc107; border-radius:6px; padding:12px;">
+              <p style="color:#f0d060; font-weight:700; margin-bottom:6px; font-size:0.85em;">⚠️ ZZZ CHARACTER NOTE</p>
+              <p style="color:#e8d5a0; font-size:0.85em; line-height:1.7; margin:0;">
+                <strong style="color:white;">Ye Shunguang from ZZZ</strong> is ref #1 — silhouette and keyhole shape only.
+                She's from a popular IP. Don't copy her colorway, star panel, flame embroidery, or obi band.
+                Dress shape is borrowed. Identity must be original.
+              </p>
+            </div>
+          </div>
+
         </details>
-      `
-    },
-
-    // ══════════════════════════════════════════════════════
-    //  OVERVIEW
-    // ══════════════════════════════════════════════════════
-    {
-      id:        "overview",
-      title:     "Design Brief — Read First",
-      images:    ["zzz_silhouette", "ai_gen_red"],
-      fullWidth: true,
-      style:     "background: linear-gradient(135deg, #fff5f5 0%, #fffaf0 100%); border: 3px solid #c0392b;",
-      content:   `
-        <p><strong>Concept:</strong> Long tight battle qipao. Elegant but designed to fight in.
-           Column silhouette, geometric diamond chest keyhole, high side slits with matching ornate leggings,
-           tight ornate detached arm sleeves with a geometric diamond hole at the top of each sleeve,
-           and decorative embroidery throughout.</p>
-
-        <div class="warning-box" style="margin-top:14px; border-left-color: #9b59b6; background: #f9f0ff;">
-          <p style="color:#6c3483; margin:0 0 8px 0;"><strong>📝 On topic of lewdness - Main Outfit vs China Outfit</strong></p>
-          <p style="color:#6c3483; margin:0;">
-          <strong>tl;dr</strong> Make sure the main battle kimono is more lewd then this.<br>
-            The intention is that the <strong>main/default outfit
-            should remain more revealing than this China outfit</strong>. Keep that hierarchy in mind
-            when making decisions about exposure level — the China dress should feel elegant and
-            battle-ready, but not her most revealing look overall.
-          </p>
-        </div>
-
-        <div class="warning-box" style="margin-top:14px;">
-          <p style="color:#856404; margin:0 0 8px 0;"><strong>⚠️ ZZZ Character Note</strong></p>
-          <p style="color:#856404; margin:0;">
-            <strong>Ye Shunguang from Zenless Zone Zero</strong> is included because she's the closest
-            existing example to the target silhouette and diamond keyhole shape. She's from a very popular IP —
-            the dress shape is the reference, the identity must be entirely original.
-            <br><br>
-            <strong>Take from her:</strong> silhouette shape, slit construction, diamond keyhole shape.<br>
-            <strong>Avoid replicating:</strong> her colorway · star-shaped panel framing ·
-            flame thigh embroidery · obi waist band · her accessory language.
-          </p>
-        </div>
-
-        <p style="margin-top:14px; background:white; padding:10px; border-radius:8px; line-height:2.1;">
-          <strong>Design Checklist:</strong><br>
-          ☐ Long pencil column silhouette, ankle-grazing (or shorter — see section 1)<br>
-          ☐ Diamond/angular keyhole — mid-chest + underboob, hard edges, trim-bordered<br>
-          ☐ Decorative cord/rope side straps along the bodice sides<br>
-          ☐ Two high side slits to hip, trim-edged<br>
-          ☐ Ornate leggings stopping above the knee — optional, see section 4<br>
-          ☐ Tight ornate detached arm sleeves — geometric/diamond hole at the top of each sleeve<br>
-          ☐ Embroidery (cloud/dragon motif) — accent placement only, not full coverage<br>
-          ☐ High mandarin collar + frog closures (see section 7)<br>
-          ☐ Tassels at hip, decorative piping along all edges<br>
-          ☐ Back exposed — full open, cross-strap, or keyhole (your call)<br>
-          ☐ Back split flap panels — optional, see section 9<br>
-          ☐ Hair — likely ponytail, Chinese-themed ornament/bowtie, see section 10
-        </p>
       `
     },
 
@@ -260,37 +204,26 @@ const ViewModel = {
       title:   "1 — Silhouette & Dress Length",
       images:  ["zzz_silhouette", "column_back", "black_archive", "ai_gen_long"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Pencil-column tight dress, ankle-length preferred. No flare, no volume.
-          The slits and keyhole do all the revealing — the silhouette itself is a controlled vertical line.
-          Shorter hem is fine if full length feels too formal.
-        </div>
-
-        <p><strong>Target:</strong> Pencil column — extremely narrow and tight from chest to ankle.
-           The side slits and keyhole do all the revealing; the silhouette itself stays completely controlled.</p>
-        <ul>
-          <li>No flare, no A-line, no puff anywhere</li>
-          <li>Fabric clings to the body from collar to hem</li>
-          <li>Reads as a single clean vertical line from a distance</li>
-        </ul>
+        <p>Tight pencil column — fabric clings from collar to hem, no flare or volume anywhere.
+           The slits and keyhole do all the revealing; the silhouette itself is a controlled vertical line.</p>
 
         <div class="options">
-          <h3>Hem Option A — Full Length (preferred)</h3>
-          <p>Ankle-grazing or floor-length. Bottom hem can feature an ornate geometric border panel.
+          <h3>Option A — Full Length (preferred)</h3>
+          <p>Ankle-grazing. Bottom hem can have an ornate geometric border panel.
              <span class="ref-tag">#1 ZZZ Silhouette</span> <span class="ref-tag">#8 AI Long Hem</span></p>
         </div>
         <div class="options">
-          <h3>Hem Option B — Shorter</h3>
-          <p>Mid-calf to knee. More clearly battle-functional. Your call if full length feels too formal.
+          <h3>Option B — Shorter</h3>
+          <p>Mid-calf to knee. More battle-functional. Your call.
              <span class="ref-tag">#4 Dragon Qipao</span> <span class="ref-tag">#9 Ornate Leggings</span></p>
         </div>
 
         <h3>Key Refs:</h3>
         <ul>
-          <li><span class="ref-tag">#1 ZZZ Silhouette</span> — Primary blueprint. Column tightness, length, slit depth. Ignore all other details — see overview note.</li>
+          <li><span class="ref-tag">#1 ZZZ Silhouette</span> — Primary blueprint. Column tightness, length, slit depth. Silhouette and keyhole only — see ZZZ note in Quick Summary.</li>
           <li><span class="ref-tag">#3 Column Back</span> — Non-ZZZ back view cross-check.</li>
-          <li><span class="ref-tag">#8 AI Long Hem</span> — Ornate geometric bottom-hem panel option at full length.</li>
-          <li><span class="ref-tag">#4 Dragon Qipao</span> — Shorter hem alternative. Note the dragon motif — strong embroidery direction ref.</li>
+          <li><span class="ref-tag">#8 AI Long Hem</span> — Ornate geometric bottom-hem panel at full length.</li>
+          <li><span class="ref-tag">#4 Dragon Qipao</span> — Shorter hem option. Dragon motif is also a good embroidery direction ref.</li>
         </ul>
       `
     },
@@ -303,27 +236,15 @@ const ViewModel = {
       title:   "2 — Chest Keyhole Cutout",
       images:  ["zzz_silhouette", "angular_cutout", "ai_gen_red", "zzz_chest"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Hard-edged diamond or pointed-arch opening center-chest.
-          Exposes mid-chest and underboob. Clean trim border on all edges. Looks designed, not absent.
-        </div>
+        <p>Diamond or pointed-arch shaped opening, center chest. Hard clean edges — not a soft plunge.
+           Exposes mid-chest and top of underboob. All edges trim-bordered. Should look designed, not absent.</p>
 
-        <p><strong>Shape:</strong> Geometric diamond or pointed-arch opening. Hard clean edges — not a soft plunge.
-           Exposes mid-chest and the top of the underboob.</p>
-        <ul>
-          <li>All edges cleanly bordered with trim — intentional and structural</li>
-          <li>Surrounding bodice frames it from both sides</li>
-          <li>Sits center-chest, connected upward to the mandarin collar via fabric</li>
-          <li>Should look designed — like a cut shape, not absent fabric</li>
-        </ul>
         <h3>Key Refs:</h3>
         <ul>
-          <li><span class="ref-tag">#1 ZZZ Silhouette</span> — <strong>Best single ref for the diamond keyhole shape.</strong>
-              The diamond opening construction is the primary guide. Ignore all other details.</li>
-          <li><span class="ref-tag">#6 AI Red</span> — Diamond keyhole clearly rendered at full body scale.</li>
-          <li><span class="ref-tag">#5 Angular Cutout</span> — Hard edge definition and how the bodice holds the shape.</li>
-          <li><span class="ref-tag">#2 ZZZ Chest</span> — Closeup: how fabric panels frame the opening and how trim borders it.
-              Do not replicate the star shape or dark framing style.</li>
+          <li><span class="ref-tag">#1 ZZZ Silhouette</span> — Best single ref for the diamond keyhole shape. Primary guide. Ignore all other details.</li>
+          <li><span class="ref-tag">#6 AI Red</span> — Diamond keyhole at full body scale.</li>
+          <li><span class="ref-tag">#5 Angular Cutout</span> — Hard edge definition and bodice framing.</li>
+          <li><span class="ref-tag">#2 ZZZ Chest</span> — Closeup of how trim borders the opening. Don't replicate the star shape or dark framing.</li>
         </ul>
       `
     },
@@ -336,33 +257,15 @@ const ViewModel = {
       title:   "3 — Side Slits & Side Cord Straps",
       images:  ["ai_gen_purple", "zzz_silhouette", "column_back"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Two high slits running to hip level — the only leg reveal.
-          Leggings visible through them. Plus decorative rope/cord straps running vertically
-          along the bodice sides for visual detail. Cord color is your inspiration.
-        </div>
+        <p>Two high slits from hem to hip — the only leg reveal. Slit edges finished with trim piping.</p>
+        <p>Plus decorative rope/cord straps running vertically along the bodice sides between fabric panels.
+           Cord color at your inspiration — should complement the trim. Deliberate and decorative, not functional lacing.</p>
 
-        <p><strong>Slits:</strong> Two high slits from hem up to hip level. The dress stays long and narrow —
-           slits are the only leg reveal. Leggings visible through both slits.</p>
-        <ul>
-          <li>Slit edges finished with decorative trim piping</li>
-          <li>Depth: hip level — shows the full legging-to-bare-thigh gap</li>
-          <li>Both sides symmetrical</li>
-        </ul>
-
-        <p><strong>Side Cord Straps:</strong> Decorative rope or cord detail running vertically along
-           the bodice sides, between the main fabric panels. Visible from the front.</p>
-        <ul>
-          <li>Cord color at your inspiration — should complement the rest of the trim</li>
-          <li>Should feel deliberate and decorative — not functional lacing</li>
-          <li>Adds visual interest to the sides of the bodice</li>
-        </ul>
         <h3>Key Refs:</h3>
         <ul>
-          <li><span class="ref-tag">#7 AI Purple</span> — <strong>Best ref for the side cord strap detail.</strong>
-              Rope running along the bodice sides — adapt cord treatment to your inspiration.</li>
+          <li><span class="ref-tag">#7 AI Purple</span> — Best ref for the side cord strap detail.</li>
           <li><span class="ref-tag">#1 ZZZ Silhouette</span> — Slit depth and placement on a long narrow dress.</li>
-          <li><span class="ref-tag">#3 Column Back</span> — How slits read on the back/side at full body scale.</li>
+          <li><span class="ref-tag">#3 Column Back</span> — How slits read at full body scale from behind.</li>
         </ul>
       `
     },
@@ -372,34 +275,26 @@ const ViewModel = {
     // ══════════════════════════════════════════════════════
     {
       id:      "leggings",
-      title:   "4 — Leggings",
+      title:   "4 — Leggings (Optional)",
       images:  ["silver_tassels", "ornate_sleeves", "honoka"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Leggings are optional. If used, they stop just above the knee and
-          match the sleeve design. If skipped, the bare legs through the slits are the reveal.
-          Either works — pick whichever reads better with the overall outfit direction.
-        </div>
-
         <div class="options">
-          <h3>Option A — With Leggings (original direction)</h3>
-          <p>Ornate leggings stopping just above the knee — clean straight cut, no lace top.
-             Design must match the arm sleeves: ornate and embroidered.
-             Bare thigh gap between legging top and slit is intentional.
+          <h3>Option A — With Leggings</h3>
+          <p>Ornate leggings stopping just above the knee, no lace top.
+             Design must match the arm sleeves. Bare thigh gap between legging top and slit is intentional.
              <span class="ref-tag">#9 Ornate Leggings</span> <span class="ref-tag">#10 Ornate Sleeves</span></p>
         </div>
         <div class="options">
           <h3>Option B — No Leggings</h3>
-          <p>Bare legs through the slits. Makes the outfit read differently — lighter, more open.
-             The slits then do all the leg work on their own.
+          <p>Bare legs through the slits — lighter, more open read.
              <span class="ref-tag">#15 Honoka</span></p>
         </div>
 
         <h3>Key Refs:</h3>
         <ul>
-          <li><span class="ref-tag">#9 Ornate Leggings</span> — Full body view with ornate leggings through a slit. Also shows a shorter hem option.</li>
-          <li><span class="ref-tag">#10 Ornate Sleeves</span> — If using leggings, their pattern language should mirror this sleeve style.</li>
-          <li><span class="ref-tag">#15 Honoka</span> — Shows the no-leggings version clearly across multiple views.</li>
+          <li><span class="ref-tag">#9 Ornate Leggings</span> — Full body: ornate leggings through a slit. Also shows shorter hem option.</li>
+          <li><span class="ref-tag">#10 Ornate Sleeves</span> — Legging pattern should mirror this sleeve style.</li>
+          <li><span class="ref-tag">#15 Honoka</span> — No-leggings version across multiple views.</li>
         </ul>
       `
     },
@@ -412,42 +307,23 @@ const ViewModel = {
       title:   "5 — Detached Arm Sleeves",
       images:  ["ornate_sleeves", "ai_gen_red", "ai_gen_purple"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Tight ornate detached sleeves, long to the wrist.
-          Key feature: a deliberate geometric/diamond-shaped hole at the very top of each sleeve
-          near the shoulder — bordered and intentional, not a gap. Design matches the leggings.
-        </div>
+        <p>Tight-fitting ornate detached sleeves, upper arm to wrist. Hug the arm closely.</p>
+        <p><strong>Key detail:</strong> a deliberate geometric/diamond-shaped hole near the top of each sleeve
+           at the upper arm — bordered and clean, consistent with the diamond language of the outfit.</p>
 
-        <p><strong>Style:</strong> Tight-fitting ornate detached sleeves — long, running from upper arm to wrist.
-           They hug the arm closely. Attach at the upper arm with a band or loop.</p>
-
-        <p><strong>Key Detail — Geometric Hole at the Top:</strong>
-           Each sleeve has a deliberate geometric or diamond-shaped open cutout near the attachment point
-           at the upper arm. It frames a small peek of skin at the shoulder junction.
-           The hole is bordered and clean — intentional, not a bad fit or raw gap.</p>
-
-        <ul>
-          <li>Tight fit throughout — no loose or billowing fabric</li>
-          <li>Ornate embroidered or patterned surface — visually matches the leggings</li>
-          <li>The hole at the top is edged and deliberate — consistent with the diamond language of the outfit</li>
-          <li>Long to the wrist</li>
-        </ul>
-
-        <div class="warning-box" style="margin-top: 12px;">
+        <div class="warning-box">
           <p style="color:#856404; margin:0;">
-            <strong>Overall vibe note:</strong> <span class="ref-tag">#10 Ornate Sleeves</span>
-            captures a design energy that's hard to put into words — the way the ornate detail feels
-            earned rather than decorative, and how the outfit reads as both elegant and capable at once.
-            The dragon motif on the sleeve fabric is a strong embroidery direction option.
-            The sleeve construction here is also a strong direction ref beyond just the pattern.
+            <strong>Vibe note:</strong> <span class="ref-tag">#10 Ornate Sleeves</span> captures the overall
+            design energy to aim for — ornate detail that feels earned, elegant and capable at once.
+            The dragon motif on the sleeve is a strong embroidery direction option.
           </p>
         </div>
 
         <h3>Key Refs:</h3>
         <ul>
-          <li><span class="ref-tag">#10 Ornate Sleeves</span> — Overall sleeve language, embroidery style, and general design vibe.</li>
-          <li><span class="ref-tag">#6 AI Red</span> — <strong>Best ref for the geometric hole at the top of the sleeve.</strong></li>
-          <li><span class="ref-tag">#7 AI Purple</span> — Second angle of the sleeve hole detail in a 3/4 view.</li>
+          <li><span class="ref-tag">#10 Ornate Sleeves</span> — Overall sleeve language, embroidery style, design vibe.</li>
+          <li><span class="ref-tag">#6 AI Red</span> — Best ref for the geometric hole at the top of the sleeve.</li>
+          <li><span class="ref-tag">#7 AI Purple</span> — Sleeve hole in a 3/4 view.</li>
         </ul>
       `
     },
@@ -460,27 +336,16 @@ const ViewModel = {
       title:   "6 — Embroidery & Fabric",
       images:  ["ornate_sleeves", "black_archive", "snowflake_close", "column_back"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Satin/silk base fabric. Intricate thread embroidery in a cloud or dragon motif,
-          placed as accents on hem panels and one side — not covering the whole dress.
-          Less is more. The silhouette carries the design.
-        </div>
+        <p>Satin or silk finish base. Embroidery in cloud, dragon, or Chinese botanical motifs —
+           accent placement on hem panels and one side panel only. Not full coverage.
+           The silhouette carries the design; embroidery is the accent.</p>
 
-        <p><strong>Base fabric:</strong> Satin or silk finish. Lustrous, smooth, light-catching.</p>
-        <p><strong>Embroidery:</strong> Intricate thread work. Cloud motifs, dragon elements, or abstract Chinese botanical.
-           Accent placement — lower hem panels and one side panel. Not full coverage.</p>
-        <ul>
-          <li>Each element should breathe — readable from a distance</li>
-          <li>Fabric tightness should show through the motifs</li>
-          <li>Less is more — the silhouette carries the design</li>
-        </ul>
         <h3>Key Refs:</h3>
         <ul>
-          <li><span class="ref-tag">#10 Ornate Sleeves</span> — Embroidery-to-fabric ratio and clean placement. The dragon motif on the sleeve is a strong direction option.</li>
-          <li><span class="ref-tag">#4 Dragon Qipao</span> — The dragon motif on this dress is another good embroidery direction ref.</li>
-          <li><span class="ref-tag">#11 Fabric Pattern</span> — <em>Design idea only, not a requirement.</em>
-              Shows how a motif sits on tight satin at chest level. Replace snowflakes with cloud/dragon if using.</li>
-          <li><span class="ref-tag">#3 Column Back</span> — Light pattern on a long column at full body scale.</li>
+          <li><span class="ref-tag">#10 Ornate Sleeves</span> — Embroidery-to-fabric ratio. Dragon motif on sleeve is a strong direction.</li>
+          <li><span class="ref-tag">#4 Dragon Qipao</span> — Dragon motif on a full dress at body scale.</li>
+          <li><span class="ref-tag">#11 Fabric Pattern</span> — Design idea only, not required. Shows motif density on tight satin.</li>
+          <li><span class="ref-tag">#3 Column Back</span> — How light pattern placement reads at full body scale.</li>
         </ul>
       `
     },
@@ -493,36 +358,21 @@ const ViewModel = {
       title:   "7 — Collar & Closures",
       images:  ["snowflake_close", "ai_gen_red", "black_archive"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> High standing mandarin collar. 3–5 Chinese frog knot closures below it,
-          running down to the keyhole. The collar knot/bowtie detail at the very top is your artistic inspiration —
-          just keep it Chinese-feeling rather than Western.
-        </div>
-
-        <p><strong>Collar:</strong> High mandarin collar — stiff and standing, not folded.
-           Anchors the top of the outfit and leads into the keyhole below.</p>
-
-        <p><strong>Closures:</strong> 3–5 decorative knot-style closures (frog buttons) running vertically
-           from collar down to just above the keyhole.</p>
-        <ul>
-          <li>Each closure is a Chinese frog knot — not a plain button</li>
-          <li>Legible but not oversized — a detail, not a feature</li>
-          <li>Even spacing, intentional placement</li>
-        </ul>
+        <p>High mandarin collar — stiff and standing, not folded.
+           3–5 Chinese frog knot closures running from collar down to just above the keyhole.</p>
 
         <div class="options">
-          <h3>Note on Collar Knot / Bowtie Detail</h3>
-          <p>The decorative element at the very top of the collar is open to your artistic inspiration.
-             If using a bow or tie, lean Chinese rather than Western —
-             think a Chinese knot (盘扣), tassel tie, or cord knot rather than a fabric bow.
-             Keep it culturally consistent — the rest is entirely your call.</p>
+          <h3>Collar Top Detail — Your Inspiration</h3>
+          <p>The decorative element at the very top of the collar is open to your interpretation.
+             Lean Chinese rather than Western — a Chinese knot (盘扣), tassel tie, or cord knot
+             rather than a fabric bow. Keep it culturally consistent.</p>
         </div>
 
         <h3>Key Refs:</h3>
         <ul>
           <li><span class="ref-tag">#11 Fabric Pattern</span> — Closure scale, spacing, and placement closeup.</li>
-          <li><span class="ref-tag">#6 AI Red</span> — Frog closures visible at full body scale in a rendered outfit.</li>
-          <li><span class="ref-tag">#4 Dragon Qipao</span> — Full body: collar and closure placement at viewing distance.</li>
+          <li><span class="ref-tag">#6 AI Red</span> — Frog closures at full body scale.</li>
+          <li><span class="ref-tag">#4 Dragon Qipao</span> — Collar and closure placement at viewing distance.</li>
         </ul>
       `
     },
@@ -535,23 +385,12 @@ const ViewModel = {
       title:   "8 — Tassels & Trim",
       images:  ["silver_tassels"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Decorative piping on every fabric edge — slits, hem, collar, cutout border.
-          One or two tassels hanging at the hip. Consistent trim throughout ties the whole outfit together.
-          Keep it minimal — the dress does the heavy lifting.
-        </div>
+        <p>Decorative piping on every fabric edge — slits, hem, collar, cutout border — consistent throughout.
+           One or two tassels at hip level. Keep it minimal; the dress does the heavy lifting.</p>
 
-        <p><strong>Trim:</strong> Decorative piping along all fabric edges —
-           slit edges, hem, collar edge, cutout border. Consistent throughout.</p>
-        <p><strong>Tassels:</strong> One or two tassels hanging at hip level from a clasp or side loop.</p>
-        <ul>
-          <li>Trim is the visual thread that ties all elements together</li>
-          <li>Tassels add movement when she moves</li>
-          <li>Keep density low — the dress does the heavy lifting</li>
-        </ul>
         <h3>Key Ref:</h3>
         <ul>
-          <li><span class="ref-tag">#9 Ornate Leggings</span> — Tassel placement and hang on a qipao. Adapt to your chosen trim direction.</li>
+          <li><span class="ref-tag">#9 Ornate Leggings</span> — Tassel placement and hang. Adapt to your chosen trim direction.</li>
         </ul>
       `
     },
@@ -564,45 +403,33 @@ const ViewModel = {
       title:   "9 — Back Design (Your Call)",
       images:  ["open_back", "crossstrap_back", "back_column", "honoka"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> Back must be exposed — your pick of full open, cross-strap, or keyhole.
-          Optionally, add split decorative fabric tail panels hanging from the back waist for visual drama.
-          They look great but may clash with the Chinese aesthetic — entirely your judgement call.
-        </div>
-
-        <p><strong>Direction:</strong> The back must be <strong>exposed</strong>.
-           How it's exposed is entirely your call — all three options below are valid.</p>
-
-        <div class="options">
-          <h3>Optional — Split Back Flap Panels</h3>
-          <p>Two long decorative fabric panels hanging from the back waist, split down the middle,
-             flowing behind her. Think the trailing fabric tails common on Genshin Impact character designs.
-             They add movement and visual drama from behind, and would be embroidered to match the dress fabric.</p>
-          <p>This is genuinely optional — they can look stunning but may pull the design away from
-             a clean Chinese qipao read. If it works with your composition, great. If it doesn't, skip it.
-             Trust your eye on this one.
-             <span class="ref-tag">#15 Honoka</span></p>
-        </div>
+        <p>The back must be exposed. Pick whichever option works with your composition.</p>
 
         <div class="options">
           <h3>Option A — Full Open Back</h3>
-          <p>Entire back bare from shoulder blades to small of the back.
-             Halter-style front with no back panel. Maximum skin, cleanest silhouette from behind.
+          <p>Entire back bare, halter-style front, no back panel.
              <span class="ref-tag">#14 Open Back</span></p>
         </div>
         <div class="options">
           <h3>Option B — Cross-Strap / Lace-Up</h3>
-          <p>Mostly open back held with decorative cross-straps or lace-up cording.
-             Architectural — exposure feels deliberate and constructed.
+          <p>Mostly open, held with decorative cross-straps or lace-up cording.
              <span class="ref-tag">#13 Cross-Strap Back</span></p>
         </div>
         <div class="options">
           <h3>Option C — Keyhole Back</h3>
-          <p>Single geometric cutout mirroring the front keyhole — smaller,
-             placed mid-back or at shoulder blade level. Creates front/back symmetry.
-             Work from the front keyhole shape as your guide.</p>
+          <p>Single geometric cutout mirroring the front keyhole, smaller, mid-back or shoulder blade level.</p>
         </div>
-        <p style="margin-top:10px;"><span class="ref-tag">#12 Back Silhouette</span> — Full body back view for silhouette proportion, regardless of which option you choose.</p>
+        <div class="options">
+          <h3>Optional — Split Back Flap Panels</h3>
+          <p>Two long decorative fabric panels hanging from the back waist, split down the middle.
+             Like Genshin Impact trailing fabric tails — adds drama but may fight the qipao read.
+             Trust your eye. <span class="ref-tag">#15 Honoka</span></p>
+        </div>
+
+        <h3>Key Ref:</h3>
+        <ul>
+          <li><span class="ref-tag">#12 Back Silhouette</span> — Full body back view for proportion reference.</li>
+        </ul>
       `
     },
 
@@ -614,44 +441,22 @@ const ViewModel = {
       title:   "10 — Hair & Ponytail Bowtie",
       images:  ["ai_gen_purple", "ornate_sleeves"],
       content: `
-        <div class="tldr-box">
-          <strong>TL;DR:</strong> She likely keeps her ponytail for this outfit. The hair ornament/bowtie
-          should feel Chinese rather than plain — but references here are limited so this is
-          largely your creative space. Go with what feels right for the outfit.
-        </div>
-
-        <p><strong>Hair:</strong> The assumption is she keeps her ponytail for this look —
-           it's consistent with her character and works well with a qipao silhouette.
-           If you feel a different updo suits the design better, that's fine too.</p>
-
-        <p><strong>Hair Ornament / Bowtie:</strong> There should be some form of decorative hair
-           piece that ties into the Chinese outfit theme — a hair ornament, ribbon, knot, or bowtie
-           style piece near the ponytail base or on the side.</p>
+        <p>She likely keeps her ponytail. Add a Chinese-themed hair ornament or bowtie — something
+           that complements rather than competes with the outfit.</p>
 
         <div class="options">
-          <h3>Loose Direction — Mix and Match</h3>
-          <p>Looking at <span class="ref-tag">#7 AI Purple</span>, the hair accessory there has a nice
-             structured feel with the ribbon/bow at the ponytail — something in that territory could work.
-             <span class="ref-tag">#10 Ornate Sleeves</span> shows the character with a hair ornament
-             that has a more elaborate, Chinese-accessory feel with hanging elements.
-             A combination of both — a structured bow shape with some hanging ornament detail — could
-             be a strong direction.</p>
+          <h3>Loose Direction</h3>
+          <p><span class="ref-tag">#7 AI Purple</span> has a structured ribbon/bow at the ponytail base.
+             <span class="ref-tag">#10 Ornate Sleeves</span> shows a more elaborate Chinese ornament with hanging elements.
+             A mix of both — structured bow with hanging detail — could be a strong direction.</p>
         </div>
 
         <div class="warning-box">
           <p style="color:#856404; margin:0;">
-            <strong>Note:</strong> References for this specific element are limited — this brief doesn't
-            have strong dedicated hair refs to point to. This is genuinely your creative space.
-            The only loose asks are: keep it feeling Chinese rather than generic, and make sure it
-            complements rather than competes with the outfit. Otherwise, go with your instinct.
+            References here are limited — this is your creative space.
+            Only ask: keep it feeling Chinese, not generic Western.
           </p>
         </div>
-
-        <h3>Loose Refs (direction only, not prescriptive):</h3>
-        <ul>
-          <li><span class="ref-tag">#7 AI Purple</span> — Hair bow/ribbon structure at the ponytail base as a starting point.</li>
-          <li><span class="ref-tag">#10 Ornate Sleeves</span> — More elaborate hair ornament with Chinese accessory language and hanging elements.</li>
-        </ul>
       `
     },
 
